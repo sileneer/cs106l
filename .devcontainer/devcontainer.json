@@ -1,0 +1,46 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
+{
+	"name": "C++ (CS106L Optimized)",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-vscode.cpptools",
+				"ms-vscode.cmake-tools",
+				"ms-vscode.cpptools-extension-pack",
+				"ms-vscode.makefile-tools",
+				"ms-azuretools.vscode-docker",
+				"streetsidesoftware.code-spell-checker",
+				"ms-vscode.hexeditor",
+				"twxs.cmake"
+			],
+			"settings": {
+				"C_Cpp.default.cppStandard": "c++17",
+				"C_Cpp.default.compilerPath": "/usr/bin/g++",
+				"C_Cpp.default.includePath": [
+					"${workspaceFolder}/**"
+				],
+				"cmake.configureOnOpen": false,
+				"cmake.buildDirectory": "${workspaceFolder}/build"
+			}
+		}
+	},
+	"postCreateCommand": "sudo apt-get update && sudo apt-get install -y cmake clang-format clang-tidy gdb valgrind cppcheck && gcc -v",
+	"forwardPorts": [],
+	"mounts": [
+		"source=${localWorkspaceFolder}/.vscode,target=/workspaces/cs106l/.vscode,type=bind,consistency=cached"
+	]
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "gcc -v",
+	// Configure tool-specific properties.
+	// "customizations": {},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}

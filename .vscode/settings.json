@@ -1,0 +1,45 @@
+{
+    "files.associations": {
+        "*.tpp": "cpp",
+        "*.h": "cpp",
+        "*.hpp": "cpp",
+        "*.inc": "cpp"
+    },
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.compilerPath": "/usr/bin/g++",
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/**"
+    ],
+    "C_Cpp.clang_format_style": "Google",
+    "C_Cpp.intelliSenseEngine": "default",
+    "C_Cpp.errorSquiggles": "enabled",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "editor.wordWrap": "off",
+    "cmake.configureOnOpen": false,
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+    "cmake.generator": "Unix Makefiles",
+    "files.exclude": {
+        "**/build": true,
+        "**/bin/*.o": true,
+        "**/.git": true
+    },
+    "search.exclude": {
+        "**/build": true,
+        "**/bin": true
+    },
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "git.autofetch": true,
+    "cSpell.words": [
+        "cppcheck",
+        "endl",
+        "iostream",
+        "stdlib"
+    ]
+}

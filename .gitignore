@@ -39,3 +39,39 @@
 
 # debug information files
 *.dwo
+
+# Build directories
+bin/
+build/
+debug/
+release/
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+
+# VS Code settings (keep some, ignore others)
+.vscode/settings.json.user
+.vscode/launch.json.user
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Compiled binaries from assignments
+assignments/*.exe
+assignments/*.out
+examples/*.exe
+examples/*.out
+
+# Core dumps
+core.*
