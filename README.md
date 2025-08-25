@@ -286,6 +286,35 @@ This will check:
 - **"No such file"**: Check that your source files are in the correct directory
 - **"Makefile errors"**: Try `./cs106l.sh clean` and rebuild
 
+#### CMake Build Errors
+If you encounter errors like `"No such file or directory"` when building with CMake, especially with files in the `examples/` directory, try these steps:
+
+**Problem**: CMake fails with errors like:
+```
+c++: error: /workspaces/cs106l/examples/streams.cpp: No such file or directory
+c++: fatal error: no input files
+compilation terminated.
+```
+
+**Solution**: Clean rebuild the CMake build system:
+```bash
+# Remove the build directory completely
+rm -rf build
+
+# Reconfigure CMake from scratch
+cmake -B build -S . -DCMAKE_BUILD_TYPE=Debug
+
+# Build everything
+cmake --build build --parallel
+```
+
+**Alternative using VS Code tasks**:
+1. Run "CMake Clean" task
+2. Run "CMake Configure" task  
+3. Run "CMake Build" task
+
+**Why this happens**: Stale build files or configuration can cause CMake to reference old file paths. The CMake system automatically discovers all `.cpp` files in `assignments/` and `examples/` directories, but sometimes needs a fresh start to properly detect file changes or renames.
+
 ### Debugging Issues
 - **"No debugging symbols"**: Make sure you compiled with `-g` flag (automatic with our Makefile)
 - **"Cannot find source file"**: Use absolute paths or check working directory
