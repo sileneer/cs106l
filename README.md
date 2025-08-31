@@ -1,6 +1,6 @@
 # CS106L - Standard C++ Programming
 
-A complete development environment for Stanford's CS106L course, optimized for learning modern C++ with VS Code and Dev Containers.
+A complete development environment for Stanford's CS106L course, optimized for learning modern C++ with VS Code and Dev Containers. This project is based on CS106L Winter 2020.
 
 ## 🚀 Quick Start
 
@@ -98,15 +98,25 @@ make clean
 
 **Configure and build:**
 ```bash
-mkdir -p build
-cd build
-cmake ..
-make
+cmake -B build -S . -DCMAKE_BUILD_TYPE=Debug
+cmake --build build --parallel
 ```
 
-**Run:**
+**Run compiled programs:**
 ```bash
-./bin/main
+# Run the main program
+./build/bin/main
+
+# Run examples (automatically built from examples/ directory)
+./build/bin/vector_example
+./build/bin/1-intro
+./build/bin/2-streams
+
+# Run assignments (automatically built from assignments/ directory) 
+./build/bin/template
+
+# List all available executables
+ls build/bin/
 ```
 
 **Note:** CMake automatically discovers and builds all `.cpp` files in `assignments/` and `examples/` directories.
